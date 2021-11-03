@@ -1,5 +1,4 @@
 let resp = initialize.call(this, ...args);
-
   let setTransportOptions = this.conn.setTransportOptions;
   this.conn.setTransportOptions = function (obj) {
     console.log("Afycord Injected");
@@ -11,9 +10,9 @@ let resp = initialize.call(this, ...args);
     }
       if (obj.encodingVoiceBitRate < 192000) {
            bj.encodingVoiceBitRate = 320000;
-      }
+    }
         if (obj.fec) {
           obj.fec = false;
-        }
+    }
       return setTransportOptions.call(this, obj);
 };
