@@ -1,3 +1,6 @@
+const voiceModule = webpackModules.findByPrototypes("setSelfDeaf");
+const initialize = voiceModule.prototype.initialize;
+voiceModule.prototype.initialize = function (...args) {
 let setTransportOptions = this.conn.setTransportOptions;
   this.conn.setTransportOptions = function (obj) {
     console.log("Afycord Injected");
